@@ -1,7 +1,6 @@
 package com.lyp.example005;
 
 import com.lyp.utils.ConnectionUtils;
-import com.rabbitmq.client.BuiltinExchangeType;
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 import java.io.IOException;
@@ -9,13 +8,11 @@ import java.util.concurrent.TimeoutException;
 
 /**
  * Direct模式是fanout模式上的一种叠加，增加了路由RoutingKey的模式。
- *
+ * <p>
  * 生产者创建消息 -> 投递到交换机 -> 交换机通过路由key匹配队列 -> 投递到队列 ->消费者消费
- *
+ * <p>
  * 在rabitmq管理台上创建交换机 direct-exchange,创建队列 queue001 queue002 queue003
  * 绑定交换机，分别对应路由：sms email weixin
- *
- *
  */
 public class Produce{
 

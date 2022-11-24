@@ -2,7 +2,6 @@ package com.lyp.example005;
 
 import com.lyp.utils.ConnectionUtils;
 import com.rabbitmq.client.AMQP.BasicProperties;
-import com.rabbitmq.client.BuiltinExchangeType;
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.DefaultConsumer;
@@ -18,7 +17,6 @@ public class Consumer{
     final Channel channel = connection.createChannel();
 
     String tempQueue = "queue001";
-
 
     // 实现消息方法
     DefaultConsumer defaultConsumer = new DefaultConsumer(channel){

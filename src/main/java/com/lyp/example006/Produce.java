@@ -9,9 +9,9 @@ import java.util.concurrent.TimeoutException;
 
 /**
  * Topic 模式是direct模式上的一种叠加，增加了模糊路由RoutingKey的模式
- *
+ * <p>
  * 简单的可以理解为就是模糊的路由key匹配模式
- *
+ * <p>
  * “#” : 匹配一个或者多个 “*”：匹配一个
  */
 public class Produce{

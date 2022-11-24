@@ -17,13 +17,13 @@ public class Consumer{
     //创建会话通道
     final Channel channel = connection.createChannel();
     String queue = "abc";
-    channel.queueDeclare(queue,false,false,false,null);
+    channel.queueDeclare(queue, false, false, false, null);
 
     // 交换机绑定队列时携带路由
     String exchangeName = "topic-exchange";
     channel.exchangeDeclare(exchangeName, BuiltinExchangeType.TOPIC);
     String routeKey = "#.log";
-    channel.queueBind(queue,exchangeName,routeKey);
+    channel.queueBind(queue, exchangeName, routeKey);
 
     // 接收到消息后的回调函数
     DeliverCallback deliverCallback = new DeliverCallback(){
@@ -33,10 +33,9 @@ public class Consumer{
       }
     };
 
-
     boolean ack = true; // true是自动应答机制，即工作模式中的 轮询模式
     channel.basicConsume(queue, ack, deliverCallback, new CancelCallback(){
-      public void handle(String consumerTag){}
+      public void handle(String consumerTag){ }
     });
   }
 }

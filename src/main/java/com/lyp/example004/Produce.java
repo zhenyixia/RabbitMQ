@@ -9,7 +9,7 @@ import java.util.concurrent.TimeoutException;
 
 /**
  * fanout 模式 就是把交换机（Exchange）里的消息发送给所有绑定该交换机的队列，忽略routingKey。
- *
+ * <p>
  * 在广播模式中，生产者声明交换机的名称和类型即可
  */
 public class Produce{
@@ -28,7 +28,7 @@ public class Produce{
 
     // 声明交换机名称与类型
     String exchangeName = "fanout-exchange";
-    channel.exchangeDeclare(exchangeName,BuiltinExchangeType.FANOUT);
+    channel.exchangeDeclare(exchangeName, BuiltinExchangeType.FANOUT);
 
     // 指定路由key
     String routingKey = "";

@@ -25,7 +25,6 @@ public class Consumer{
     String tempQueue = channel.queueDeclare().getQueue();
     channel.queueBind(tempQueue, exchangeName, ""); // 第三个参数为路由，忽略
 
-
     // 实现消息方法
     DefaultConsumer defaultConsumer = new DefaultConsumer(channel){
       @Override

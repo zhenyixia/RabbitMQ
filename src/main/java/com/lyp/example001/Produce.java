@@ -15,7 +15,6 @@ public class Produce{
 
   public static void main(String[] args) throws IOException, TimeoutException{
 
-
     Connection connection = ConnectionUtils.getConnection();
 
     //创建会话通道
@@ -26,8 +25,7 @@ public class Produce{
     // 4，autoDelete 自动删除，队列不再使用时，是否自动删除此队列，如果将此参数和exclusive参数设置为true，就可以实现临时队列（不用就自动删除）
     // 5，arguments 参数，可以设置一些额外的参数，比如可以设置存活时间
 
-    channel.queueDeclare(QUEUE,true,false,false,null);
-
+    channel.queueDeclare(QUEUE, true, false, false, null);
 
     // 发磅消息
     String message = "heaven";
@@ -37,9 +35,7 @@ public class Produce{
      * 3，props： 消息属性
      * 4，body： 消息内容
      */
-    channel.basicPublish("",QUEUE,null,message.getBytes("utf-8"));
+    channel.basicPublish("", QUEUE, null, message.getBytes("utf-8"));
     System.out.println("produce send: " + message);
-
   }
-
 }

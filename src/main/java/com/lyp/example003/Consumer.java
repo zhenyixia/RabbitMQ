@@ -40,7 +40,7 @@ public class Consumer{
         System.out.println("Consumer receive: " + msg);
 
         // 手动回执消息
-        channel.basicAck(deliveryTag,false);
+        channel.basicAck(deliveryTag, false);
 
         try{
           Thread.sleep(1000);

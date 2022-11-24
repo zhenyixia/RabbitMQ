@@ -25,7 +25,6 @@ public class Consumer02{
     String tempQueue = channel.queueDeclare().getQueue();
     channel.queueBind(tempQueue, exchangeName, ""); // 第三个参数为路由，忽略
 
-
     // 实现消息方法
     DefaultConsumer defaultConsumer = new DefaultConsumer(channel){
       @Override
@@ -52,8 +51,5 @@ public class Consumer02{
      */
     boolean ack = true; // true是自动应答机制，即工作模式中的 轮询模式
     channel.basicConsume(tempQueue, ack, defaultConsumer);
-
   }
-
-
 }
